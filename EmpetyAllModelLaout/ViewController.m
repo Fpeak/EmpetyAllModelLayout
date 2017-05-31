@@ -10,6 +10,8 @@
 #import "FPeakLayout.h"
 #import "ReactiveObjC.h"
 #import "BlockController.h"
+#import "BlockText.h"
+
 @interface ViewController ()
 @property (nonatomic, strong) UIImageView *backImage;
 @end
@@ -38,9 +40,17 @@
     btn.backgroundColor = [UIColor greenColor];
     [self.backImage addSubview:btn];
     [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        BlockText *blick = [[BlockText alloc]init];
+        [blick myname:@"myname" englishName:^(NSString *num) {
+             
+        } isError:^{
+            
+        }];
         BlockController *name = [[BlockController alloc]init];
         [self.navigationController pushViewController:name animated:YES];
     }];
+    
+    
 }
 
 

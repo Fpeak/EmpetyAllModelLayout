@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^lixOperation)(NSInteger);
+typedef void (^lixOperation)(NSInteger number1);
 typedef void (^lixError)(void);
 @interface BlockLix : NSObject
 

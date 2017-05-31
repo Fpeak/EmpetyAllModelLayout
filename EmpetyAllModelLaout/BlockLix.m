@@ -15,7 +15,6 @@
     if (isOddNum && islix) {
         islix(number);
     }
-    
     if (!isOddNum && isError) {
         isError();
     }
