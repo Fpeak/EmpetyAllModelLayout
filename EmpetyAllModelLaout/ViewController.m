@@ -20,6 +20,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //对NSArray进行过滤
+    NSArray *array = [[NSArray alloc]initWithObjects:@"beijing",@"shanghai",@"guangzou",@"wuhan", nil];
+    NSString *string = @"ang";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF CONTAINS %@",string];
+    NSLog(@"%@",[array filteredArrayUsingPredicate:pred]);
     self.title = @"全机型适配Demo";
     self.backImage = [[UIImageView alloc]initWithFrame:CGRectMake([FPeakLayout neu_layoutForAlliPhoneWidth:0], [FPeakLayout neu_layoutForAlliPhoneHeight:62], [FPeakLayout neu_layoutForAlliPhoneWidth:375], [FPeakLayout neu_layoutForAlliPhoneHeight:605])];
     self.backImage.image = [UIImage imageNamed:@"scanresultBackImage"];
@@ -41,8 +47,7 @@
     [self.backImage addSubview:btn];
     [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         BlockText *blick = [[BlockText alloc]init];
-        [blick myname:@"myname" englishName:^(NSString *num) {
-             
+        [blick myname:@"高山峰" englishName:^(NSString *num) {
         } isError:^{
             
         }];
